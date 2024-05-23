@@ -1,5 +1,6 @@
 // Meds button on dashboard
 // React
+//reudsable componrnts
 import React from 'react';
 
 const DashboardMeds = () => {
