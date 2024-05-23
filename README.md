@@ -1,18 +1,15 @@
-# Ilera-health
+# Heathcare
 healthcare application
 Software engineers with a vision for a better healthcare system
 
 ## TEAM
-  - __Product Owner__: Neekon Etemad
-  - __Scrum Master__: Kent Moreland
-  - __Development Team Members__: Yara Tercero-Parker and Michael Olorunnisola
+  - __Product Owner__: Webosmic IT Services
+
 
   1. [Requirements](#requirements)
   1. [Development](#development)
       1. [Installing Dependencies](#installing-dependencies)
       1. [Tasks](#tasks)
-  1. [Team](#team)
-  1. [Contributing](#contributing)
 
   ## Usage
 
@@ -41,11 +38,5 @@ Software engineers with a vision for a better healthcare system
   webpack -w
   ```
 
-  ### Roadmap
-
-  View the project roadmap [here](https://github.com/Enter-36-chambers-of-wu-tang-fam/Ilera-health/graphs/traffic)
 
 
-  ## Contributing
-
-  See [CONTRIBUTING.md](https://github.com/Enter-36-chambers-of-wu-tang-fam/Ilera-health/graphs/contributors) for contribution guidelines.
