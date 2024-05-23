@@ -1,0 +1,1952 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+*{
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFFFFF;
+}
+input{
+    font-family: 'Roboto', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+a{
+    text-decoration: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+clearfix:after{
+    display: block;
+    clear: both;
+    height: 0;
+    content: '';
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Lato', sans-serif;
+}
+
+h2{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 42px;
+    margin: 20px 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+h4{
+    text-align: center;
+    font-size: 24px;
+    margin: 30px 0 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+
+#app{
+    width: 100%;
+    min-height: 10px;
+}
+
+header{
+    height: 50px;
+    background-color: #fcfcfc;
+    box-shadow: 0px 0px 1px 1px #ddd;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+header > h1{
+    float:left;
+    padding-left:2.618em;
+    padding-top:.6em;
+}
+
+header > h1 img{
+  width:50px;
+}
+
+header > ul{
+    float: right;
+}
+header > ul > li{
+    float: left;
+}
+header > ul{
+    float: right;
+}
+.mobileBurger{
+    display: none;
+}
+form {
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+}
+input[type='radio']{
+    display: inline;
+}
+.dashboardRows{
+    min-height: 10px;
+    background: linear-gradient(to bottom,rgba(0,0,0,.1),rgba(0,0,0,0));
+}
+.dashboardRows:after, .wrapper:after, .reminders:after, .profileDash:after, .chat:after, .messageContacts > ul:after, .contactItem:after, header:after, header ul:after, main > section > ul:after, .welcomeHeader:after, section:after, .messagesUser:after, .messagesIncoming:after, .team:after, #mainDashWelcomeMobile:after, .providerDashParent:after, .medsTableLabels > ul:after, .medsList > div > ul:after, .provPatMeds > div:first-of-type:after, .profileSummary:after, .patientMeds:after, .patientMeds ul:after {
+    clear: both;
+    content: '';
+    display: block;
+}
+.messageContacts{
+    border-right: 2px solid #ddd;
+}
+.messagesUser{
+    text-align: right;
+}
+.contactsTab{
+    display: none;
+}
+.dashboardRows a{
+    display: block;
+    box-shadow: 1px 1px 3px #999;
+    min-height: 290px;
+    color: white;
+    border-radius: 4px;
+    padding: 20px;
+}
+#mainDashWelcomeMobile{
+    display: none;
+}
+.dashboardRows a:hover, .dashboardRows a:hover h3, .dashboardRows a:hover p, .dashboardRows a:hover i, .providerDashRight > a:hover i, .providerDashRight > a:hover h3, .providerDashRight > a:hover {
+    background: rgb(242, 108, 44);
+    color: white;
+}
+
+.dashboardRows h3, .profileDash h3, .providerDashRight > a h3{
+    font-size: 32px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 15px 0;
+    font-weight: 300;
+    color: #203248;
+}
+
+.profileDash h3 {
+  color:#f1f1f1;
+}
+
+.dashboardRows:first-of-type h3{
+    color: #F1F1F1;
+    text-align: left;
+}
+
+.dashboardRows:first-of-type h3:nth-of-type(2){
+    text-align: center;
+}
+.dashRemindersList{
+    height: 180px;
+    overflow: auto;
+}
+.dashboardRows i, .providerDashRight > a i {
+    font-size: 106px;
+    display: block;
+    width: 96px;
+    margin: 0 auto;
+    color: rgb(242, 108, 44);
+}
+
+.dashboardRows h5{
+    font-size: 72px;
+    text-align: center;
+}
+.profileDash{
+    padding: 30px 0;
+}
+.profileDash .provViewPatDash{
+    width: 30%;
+    float: left;
+}
+.mainDashWelcome img, #mainDashWelcomeMobile img, .providerDashRight img, .profileDash img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto ;
+}
+.providerDashRight img{
+    width: 100px;
+    height: 100px;
+    margin: 5% auto 1%;
+    border: 1px solid #eee;
+}
+.dashboardRows:first-of-type #mainDashWelcomeMobile h3, .dashboardRows:first-of-type .mainDashWelcome h3{
+    text-align: center;
+}
+
+.btn{
+    
+    float: right;
+}
+
+.btn-back{
+    float: left;
+}
+
+main{
+    padding: 30px 0 0;
+}
+
+.errorMsg{
+  text-align:center;
+  color:#F00;
+  margin:0 auto;
+}
+/* DASHBOARD */
+.patientDash .bottomRow > div, .bottomRow > a, .patientDash .dashboardMain > div {
+    float: left;
+    width: 31%;
+    display: block;
+    margin: 2% 1%;
+}
+
+.patientDash .dashboardMain > div {
+    width: 30%;
+    display: block;
+    margin: 2% 1.5%;
+}
+
+.dashboardInsurance h5, .profileDash .provViewPatDash h6, .providerDB h6, .patientMeds h3{
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: left;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+.providerDB img{
+    margin-bottom: 15px;
+}
+.providerDB p{
+    line-height: 140%;
+    margin-bottom: 10px;
+}
+.providerDB p:last-of-type{
+    color: red;
+}
+.providerDB p:last-of-type a{
+    color: red;
+    text-decoration: underline;
+}
+.profileDash .provViewPatDash h5{
+    margin-bottom: 10px;
+}
+
+.dashboardInsurance p{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.bottomRow p{
+    text-align: center;
+    font-size: 24px;
+    margin: 15px 0;
+    font-weight: lighter;
+    color: #203248;
+}
+
+
+.dashboardRows:first-of-type, .profileDash{
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.2)), url('https://hd.unsplash.com/photo-1463740839922-2d3b7e426a56');
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    padding: 40px 0;
+}
+
+.patientDash .dashboardMain > div{
+    float: left;
+    font-weight:300;
+    width: 30%;
+    padding: 20px 2%;
+    /* border-top: 1px solid #999; */
+    /* border-bottom: thin solid #ccc; */
+    height: 295px;
+    margin-top: 60px;
+}
+
+.patientDash .mainDashWelcome {
+  border: none !important;
+}
+
+.dashboardMain > div::last-of-type{
+    width: 40%;
+}
+
+.reminders{
+    margin-bottom: 10px;
+    background: rgba(255,255,255, 0.5);
+    color: #333;
+}
+
+.reminders > div{
+    float: left;
+    padding: 10px;
+}
+
+.reminders > div:first-of-type{
+    width: 20% !important;
+    text-align: center;
+    color: white;
+    background: rgba(242, 108, 44, 0.8);
+}
+
+.reminders > div:last-of-type{
+    width: 80%;
+}
+
+/* Calendar Application */
+
+.scheduling{
+  margin-top:2em;
+  display:inline-block;
+  width: 100%;
+}
+
+.scheduling > .datePicker{
+  margin:0em 1em;
+  text-align:center;
+  width:40%;
+  float:left;
+}
+
+.scheduling > .times{
+  float:right;
+  text-align:justify;
+  margin:1em 0;
+  width:60%;
+}
+
+.appointmentTime{
+  line-height:48px;
+}
+
+.timeOfDay h3{
+margin: 1em 0em;
+}
+
+.timeOfDay div{
+  margin:0;
+  padding:0;
+}
+
+.appointmentRequestButton{
+  /*padding-left:2.5em;*/
+  margin: 0;
+}
+
+.appointmentSuccess{
+  color:green;
+}
+
+/* CHAT */
+#chatBoard > div:nth-of-type(2){
+    min-height: 150px;
+    padding: 30px;
+    margin: 0 auto;
+    overflow: auto;
+}
+#chatBoard > div:first-of-type, .messageContacts > div:first-of-type{
+    height: 50px;
+    padding: 14px;
+    background-color: rgb(242, 108, 44);
+    color: white;
+}
+#chatBoard h4{
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+#chatBoard {
+    position: relative;
+}
+#chatBoard h3, .patientMeds .click{
+    font-size: 4vw;
+    text-align: center;
+    color: #eee;
+    padding: 10% 0;
+}
+#messageSearch{
+    padding: 10px;
+    width: 90%;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+#messageSearch:placeholder-shown{
+    background: #eee;
+}
+::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {  
+   font-weight: lighter
+}
+.chat, .messageContacts > div:first-of-type{
+    padding-top: 20px;
+}
+.chatInput{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.chat > div{
+    float: left;
+    width: 70%;
+    min-height: 100px;
+}
+
+.chat > div:first-of-type{
+    width: 30%;
+}
+
+.contactItem{
+    background: rgba(255, 255, 255, 1);
+    padding: 20px;
+    border-radius: 3px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.contactItem:hover{
+    background: rgb(242, 108, 44);
+    color: white;
+}
+.contactItem > a > div{
+    float: left;
+    width: 20%;
+}
+
+.contactItem h4{
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    padding-top: 12px;
+    margin: 0;
+}
+
+.contactItem img{
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.contactItem > a > div:nth-of-type(2){
+    width: 60%;
+}
+.contactItem > a > div:last-of-type i{
+    display: block;
+    float: right;
+    padding: 10px;
+    font-size: 20px;
+}
+#messageInput{
+     width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    min-height: 100px;
+    border: none;
+    background: #eee;
+
+}
+
+/* WELCOME */
+main > .wrapper > section{
+    min-height: 350px;
+    padding: 30px 0;
+}
+
+main > section:nth-of-type(odd){
+}
+
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.welcomeHeader{
+    box-shadow: 0px 0px 6px 2px #eee;
+}
+
+.welcomeHeader > div{
+    float: left;
+    width: 50%;
+    min-height: 600px;
+}
+.welcomeHeader > div:nth-of-type(2){
+    color: #333;
+    padding-right: 3%;
+    background-color: white;
+}
+.welcomeHeader > div:first-of-type {
+  background-image:  url('./background_images/mockup.png');
+  background-position: center 190px;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-color: #203248; 
+}
+.introPhotos {
+  background-image:  url('./background_images/patients.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+}
+.introTeam{
+    background-image: none;
+    height: 100px;
+}
+.introProviders {
+  background-image:  url('./background_images/forProviders.png');
+  background-position: center -190px;
+}
+.introPhotos h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 42px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    background: rgba(255,255,255,0.8);
+    padding: 10px 0;
+    margin: 0;
+}
+.welcomeHeader > img {
+  width:20%
+}
+.splitLogo{
+    font-size: 8vw;
+    margin: 25px 0;
+    font-weight: 300;
+}
+.welcomeMy{
+    color: white;
+    text-align: right;
+    padding-right: 10px;
+}
+.welcomeMy2{
+    display: none;
+}
+.welcomeIlera{
+    color: #203248;
+    text-align: left;
+    padding-left: 10px;
+}
+main .welcomeMessage {
+  margin: 10% 0% 5% 5%;
+  font-weight:300;
+}
+main .welcomeMessage > h1{
+  font-size: 3.2vw;
+  text-align:left;
+  margin-bottom:.5em;
+  font-weight: 500;
+}
+main .welcomeMessage li{
+    font-size: 1.4vw;
+    margin: 1% 0;
+    list-style-type: circle;
+    margin-left: 4%;
+    line-height: 125%;
+}
+main .welcomeMessage > a > button {
+  float:left;
+  margin: 2% 5% 0 0!important;
+}
+main > section:not(.welcomeHeader) li{
+    float: left;
+    width: 26%;
+    margin: 15px 3%;
+    padding: 30px 0;
+}
+main > section .material-icons{
+    font-size: 50px;
+    text-align: center;
+    margin: 0 auto;
+    color: rgb(44, 210, 205);
+    display: block;
+}
+main > section h4{
+    font-size: 28px;
+    font-weight: lighter;
+    text-align: center;
+}
+main > section p{
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.formIntro p{
+    font-size: 18px;
+    line-height: 150%;
+    margin-bottom: 20px;
+}
+.forms h5{
+    font-size: 22px;
+    text-align: center;
+    margin: 5px 0;
+}
+h5.extraTopMargin{
+    margin: 30px 0 5px;
+}
+.forms h6{
+    text-align: center;
+    color: red;
+}
+
+.bold{
+    font-weight: bold;
+}
+.allergyTable{
+    height: 350px;
+    overflow: auto;
+}
+
+.allergyRow{
+    margin-bottom: 30px;
+}
+
+.form-search{
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    position: relative;
+}
+.docSearchResult{
+    height: 250px;
+    max-width: 500px;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 3px 0px 6px 3px #eee;
+    position: absolute;
+    z-index: 100;
+}
+.docSearchResultHide{
+    display: none;
+}
+.docSearchResult li{
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    background-color: white;
+}
+
+.profilePage > div{
+    float: left;
+    width: 30%;
+    min-height: 500px;
+}
+.profileForms{
+    padding-bottom: 40px;
+}
+.profileForms form{
+    padding: 0 15px;
+}
+.profileForms button{
+    margin-top: 20px;
+}
+.profilePage > div:last-of-type{
+    width: 70%;
+}
+
+.profilePic{
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+}
+
+.profilePic_overlay{
+  visibility:hidden;
+}
+.profilePic:hover > .profilePic_overlay{
+    cursor:pointer;
+    border-radius: 50%;
+    visibility:visible;
+    line-height:200px;
+    text-align:center;
+    width: 200px;
+    height: 200px;
+    font-weight:300;
+    background:rgba(0,0,0,.6);
+    transition:background .2s, visibility .2s;
+}
+.profileSummary{
+    padding: 30px 3%;
+    color: white;
+    border-right: 2px solid #ddd;
+    position: fixed;
+}
+.profileRight{
+    margin-left: 30%;
+}
+.profileSummary li{
+    margin-bottom: 15px;
+}
+.profileSummary h3{
+    font-size: 34px;
+    text-align: center;
+    margin: 15px 0;
+    text-transform: uppercase;
+    color: #F1F1F1;
+}
+.profileSummary i{
+    color: rgb(44, 210, 205);
+}
+.profilePage .btn{
+    margin: 25px 30%;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: rgb(242, 108, 44);
+    color: white;
+    width: 175px;
+    float: right;
+}
+
+.profileDash > div{
+    float: left;
+    width: 50%;
+}
+.profileSummary .btn{
+    margin: 0 auto 20px;
+    width: 200px;
+    background-color: rgba(242, 108, 44, 1);
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px -1px #fff;
+}
+.profileDash > div:nth-of-type(2){
+    padding: 0 30px;
+}
+.quicklinks{
+    margin: 50px auto 30px;
+}
+.quicklinks h4{
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* ALL PHYSICIANS VIEW */
+
+.allPhysicians, .allPatients {
+  font-family: 'Lato', sans-serif;
+  box-sizing:border-box;
+}
+
+.allPhysicians h2, .allPatients h2{
+  margin: 1em 0em 1.5em 0em;
+  font-weight:300;
+}
+
+.myPhysicianList, .myPatientList{
+  text-align:center;
+  width:100%;
+  float:left;
+  background:rgba(13, 34, 51, 0.8);
+  padding:2em;
+  color:#FFF;
+}
+
+.myPhysicianList li{
+  display: inline-block;
+  margin:0 2em;
+}
+
+
+.myPhysicianList a{
+  color:#FFF;
+  padding:.5em;
+}
+
+.myPhysicianList .physicianInfo{
+  padding:.5em;
+  margin-top:.3em;
+}
+
+.myPhysicianList .physicianSpecialty{
+  margin-top:-.5em;
+}
+
+.myPhysicianList a:hover{
+  color:#0CC !important;
+}
+/*display:inline-block;
+text-align:center;
+}*/
+.myPhysicianList li img{
+  padding:0em 3em;
+}
+.allPhysicians .physicianImage, .allPatients .patientImage{
+  border-radius:50%;
+}
+.allPatients .patientImage{
+  max-width:150px;
+}
+
+.helpfulInfo{
+  font-size:1em;
+  color:#999;
+}
+.allPhysicians .searchForm div{
+  clear:both;
+  display:inline;
+  padding:1em 0em;
+  margin: 0 auto;
+  min-width:100% !important;
+}
+
+.allPhysicians .searchForm h3{
+  text-align:center;
+  padding: 1.5em;
+}
+
+.allPhysicians .searchForm input, select{
+  border: thin solid #CCC;
+  color: #333;
+  height: 3em;
+  width: 25%;
+  border-radius:.25em;
+  padding:0em .5em;
+  margin: 1em;
+  outline:none;  
+}
+.allPhysicians .searchForm .smallForm{
+  width:10%;
+}
+
+.allPhysicians .physicianInfo, .allPatients .patientInfo{
+  padding:.5em;
+  margin-top:.3em;
+}
+
+
+.physicianSpecialty, .patientSpecialty{
+  margin-top:-.5em;
+  font-size:.9em;
+  color:#999;
+}
+
+.allPhysicianList li, .allPatientList li{
+  display:inline-block;
+  text-align:center;
+  margin: 5%;
+}
+
+.allPhysicianList a, .allPatientList a{
+  color:#333;
+  padding:.5em;
+}
+.allPhysicianList a:hover, .allPatientList a:hover{
+  color:#099 !important;
+  border-bottom:thick solid #0CC;
+}
+
+.allPhysicianList .physicianSpecialty, .allPatientList .patientSpecialty{
+  margin-top:-.5em;
+}
+
+
+
+.searchForm{
+  clear:both;
+  text-align:center;
+  padding:1em 0em;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, rgba(13, 34, 51, 0.8), rgba(0,153,153,.9));
+  min-width:100% !important;
+  color: #FFF;
+}
+
+.searchForm button{
+  background: rgba(0,0,0,.7);
+  color:#667;
+  border: none;
+  box-shadow:.05em .05em .01em #999;
+  color: #fff;
+  padding: .4em;
+  border-radius:.2em;
+  font-size:1.25em;
+  outline:none;
+  margin: 1em;
+}
+
+.searchForm button:hover{
+  cursor:pointer;
+  background: rgba(242,108,44,1);
+  color:#fff;
+}
+
+/* Physician private profile */
+
+.searchProfile{
+  box-sizing:border-box;
+  padding: 0em;
+  font-weight:500;
+  background: #F7F7F7;
+}
+.searchProfile b{
+  font-weight: 700;
+}
+.searchProfile img{
+  float: left;
+  clear:both;
+  width:200px;
+  border-radius: 10px;
+}
+.searchProfile hr{
+  width:80%;
+}
+.searchProfile .headers{
+  color: rgba(242,108,44,1);
+}
+.searchProfile .fa{
+  padding: .5em .5em .5em 0em;
+  margin-left: 10%;
+}
+
+
+
+.physicianProfileTitle, .patientProfileTitle{
+  float:left;
+  margin-left:3%;
+  line-height:200px;
+  font-size: 5vw;
+  font-weight:300;
+}
+
+.searchProfileHeader {
+    background: rgba(13, 34, 51, 0.8);
+    color: #fff;
+    text-shadow: .01em .01em .01em #fff;
+    margin-top: 0em;
+    padding: 5em 10%;
+    float: left;
+    width: 100%;
+}
+
+.addPhysicianButton{
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    float: right;
+    font-weight: 300;
+    border: none;
+    background: rgba(0,153,153,1);
+    font-size: 1.2em;
+    border-radius: .2em;
+    color: #fff;
+    box-shadow: .01em .01em .01em #333;
+    padding: .4em;
+    outline: none;
+    right: 10%;
+}
+.addPhysicianButton:hover{
+  background: rgba(0,204,204,1);
+}
+.removePhysicianButton{
+    font-family: 'Lato', sans-serif;
+    float: right;
+    font-weight: 300;
+    border: none;
+    background: rgba(255,0,0,.5);
+    font-size: 1.2em;
+    border-radius: .2em;
+    color: #fff;
+    box-shadow: .01em .01em .01em #333;
+    padding: .4em;
+    position: absolute;
+    right: 10%;
+}
+.removePhysicianButton:hover{
+  font-family: 'Lato', sans-serif;
+  cursor:pointer;
+  position:relative;
+  background: #df2424;
+  font-size:1.2em;
+  border-radius:.2em;
+  color:#fff;
+  box-shadow: .01em .01em .01em #333;
+  padding:.4em;
+}
+.appointmentButton{
+  font-family: 'Lato', sans-serif;
+  position:absolute;
+  right:0;
+  margin-right:1em;
+  font-weight:300;
+  margin-top:4em;
+  border: none;
+  background: rgba(0,0,0,.4);
+  font-size:1.2em;
+  border-radius:.2em;
+  color:#FFF;
+  box-shadow: .01em .01em .01em #333;
+  padding:.4em;
+  outline:none;
+}
+.appointmentButton:hover{
+  font-family: 'Lato', sans-serif;
+  position:absolute;
+  right:0;
+  cursor:pointer;
+  background: rgba(255,255,255,.3);
+  font-size:1.2em;
+  border-radius:.2em;
+  color:#fff;
+  box-shadow: .01em .01em .01em #333;
+  padding:.4em;
+}
+
+.physicianProfileBio{
+  width:75%;
+  line-height:1.2em;
+  font-size:1em;
+  padding-top:1em;
+  color:#333;
+  margin: 0 auto;
+  text-align:left;
+}
+
+.physicianProfileLanguage{
+  width:75%;
+  font-size:1em;
+  padding-top:2em;
+  color:#333;
+  margin: 0 auto;
+  text-align:left;
+  
+}
+
+.physicianProfileStreet{
+  width:75%;
+  font-size:1em;
+  color:#333;
+  margin: 0 auto;
+  text-align:left;
+}
+
+.physicianProfileCity{
+  width:75%;
+  font-size:1em;
+  color:#333;
+  margin: 0 auto;
+  text-align:left;
+}
+
+.physicianProfileState{
+  width:75%;
+  font-size:1em;
+  color:#333;
+  margin: 0 auto;
+  text-align:left;
+}
+
+.physicianProfileInsuranceOne{
+  width:75%;
+  font-size:1em;
+  color:#333;
+  margin: 1em auto 0em auto;
+  text-align:left;
+}
+
+.physicianProfileInsuranceTwo{
+  width:75%;
+  font-size:1em;
+  color:#333;
+  margin: 0 auto;
+  text-align:left;  
+}
+
+/* Medical Records */
+.medRecords {
+  margin-top:2em;
+}
+.medRecords th{
+  font-size: 20px !important;
+  text-align: center !important;
+  vertical-align: middle;
+}
+
+.medRecords td{
+  font-size: 14px !important;
+  text-align: center !important;
+}
+
+.medRecords div{
+  height: auto !important;
+}
+
+.medRecords .fa-3x {
+    font-size: 3em;
+    padding: .5em 0em .5em 0em;
+}
+
+.medRecords tr button{
+  padding:1em 2em;
+  margin-left:1em;
+  color:#FAFAFA;
+  background:#d80101;
+  border:none;
+  border-radius:.2em;
+}
+
+.medRecords tr button:hover{
+  cursor:pointer;
+  background:#f00;
+  color:#fff;
+  transition: background .2s, color .2s;
+}
+
+.uploadRecord button{
+  padding:1em 2em;
+  margin-left:1em;
+  color:#fff;
+  background:#099;
+  border:none;
+  border-radius:.2em;
+}
+
+.uploadRecord button:hover {
+  background: #0CC;
+  cursor:pointer;
+  border:none;
+  color:#fff;
+  transition: background .2s, color .2s;
+  border-radius:.2em;
+}
+
+.uploadRecordPage {
+  margin:4em 0em 0em 0em;
+  text-align:center;
+  font-size:1.2em
+}
+.uploadRecordPage .successmsg {
+  color: #006400;
+  text-align:center;
+  font-size:1.1em;
+}
+.uploadRecordPage .errormsg{
+  color: #f00;
+  text-align:center;
+  font-size:1.1em;
+}
+
+.uploadRecordPage form{
+  font-size:1em;
+  max-width:600px;
+}
+
+.uploadRecordPage input, .uploadRecordPage select {
+    margin: 2% auto 5%;
+    text-align: center;
+    padding: 0em 1em;
+    width: 95%;
+    border: thin solid #CCC;
+    color: #333;
+    border-radius: .2em;
+    min-height: 2.5em;
+    font-size: 1.2em;
+}
+.uploadRecordPage label{
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #444;
+}
+.uploadRecordPage .formButton {
+  margin:1em 1em 3em 1em;
+  padding:1em 2em;
+  font-size:.8em;
+  margin-left:1em;
+  color:#666;
+  background:#CCC;
+  border:none;
+  border-radius:.2em;
+}
+
+.uploadRecordPage .formButton:hover {
+  background: #099;
+  cursor:pointer;
+  color:#fff;
+  transition: background .2s, color .2s;
+}
+
+.uploadRecordPage .uploadRecord button {
+  width:100%;
+  font-size:1.2em;
+}
+
+.appointmentRecords {
+  margin-top:2em;
+}
+.appointmentRecords tr{
+  font-size: 20px !important;
+  text-align: center !important;
+  vertical-align: middle;
+  line-height: 48px;
+}
+
+.appointmentRecords th{
+  font-size: 20px !important;
+  text-align: center !important;
+  line-height: 48px;
+}
+
+
+.appointmentRecords td{
+  font-size: 14px !important;
+  text-align: center !important;
+}
+
+.appointmentRecords div{
+  height: auto !important;
+}
+
+
+/*End Medical Records */
+
+.messagesIncoming > div, .messagesUser > div{
+    background: #ddd;
+    width: 30%;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0 10px 20px;
+    position: relative;
+}
+.messagesIncoming img{
+    position: absolute;
+    left: -19px;
+    bottom: -8px;
+}
+.messagesUser img{
+    position: absolute;
+    bottom:  -8px;
+    right: -19px;
+}
+.messagesUser > div {
+    margin: 10px 20px 10px 0;
+    background: rgb(46, 211, 205);
+    float: right;
+}
+main >section .team li{
+    float: left;
+    width: 25%;
+    border: none;
+    margin: 0;
+    padding: 30px 0;
+    position: relative;
+}
+
+.team img{
+    width: 50%;
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 3px solid white;
+   
+}
+.homeFors h4{
+    font-size: 2.7vw;
+    font-weight: 300;
+    text-align: center;
+    margin: 10px 0;
+    color: rgb(114, 114, 114);
+}
+.homeFors h3, .teamSec h3{
+    font-size: 3vw;
+    text-align: center;
+    padding: 0 10% 4%;
+    color: rgb(114, 114, 114);
+    line-height: 125%;
+}
+.homeFors p{
+    color: rgb(114, 114, 114);
+    padding: 0 18%;
+    font-size: 17px;
+    line-height: 125%;
+}
+.homeFors .wrapper, .teamSec .wrapper{
+    width: 90%;
+    margin: 0 auto;
+    padding: 6% 0;
+}
+.teamSec .wrapper{
+    padding: 2% 0;
+}
+.teamSec{
+    background-color: #203248;
+    padding: 0px 0 40px;
+    color: white;
+    text-align: center;
+}
+.teamSec h3{
+    color: white;
+}
+.teamSec h2{
+    color: #333;
+}
+.team h4{
+    font-size: 22px;
+    text-align: center;
+    font-weight: normal;
+}
+.team h5{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 300;
+}
+.team p{
+    font-size: 18px;
+    font-weight: lighter;
+    text-align: center;
+    line-height: 140%;
+    margin: 10px 0;
+}
+.teamProfile{
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.95);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+/*main >section .team li:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}*/
+main >section .team li:hover .teamProfile {
+    display: block;
+    color: #203248;
+}
+
+.showPReset{
+    display: block;
+}
+
+.hidePReset{
+    display: none;
+}
+
+
+/* PROVIDER DASH*/
+.providerDashParent {
+    padding: 20px 0;
+}
+.providerDashParent > div{
+    float: left;
+    width: 30%;
+}
+.providerDashParent > div:first-of-type{
+    width: 70%;
+}
+.providerDashMain{
+    background: #eee;
+}
+.providerDashMain > h3{
+    font-size: 3vw;
+    color: white;
+    text-align: center;
+    padding: 20% 0;
+}
+.providerDashRight > a, .providerDashRight > div{
+    height: 250px;
+    display: block;
+    border-bottom: 2px solid #eee;
+}
+.providerDashRight > a h3{
+    padding: 10% 0 0;
+}
+.providerDashRight > div h3{
+    text-align: center;
+    font-size: 32px;
+    margin: 2% 0;
+}
+.dashboardTodayApts{
+    height: 200px;
+    border-left: 1px solid black;
+    position: relative;
+    width: 85%;
+    margin: 0 auto;
+}
+.dashboardTodayApts img{
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    border-radius: 50%;
+    left: -38px;
+    top: 30%;
+    z-index: 10;
+}
+.dashboardTodayApts > div{
+    background: rgba(255, 255, 255, 0.8);
+    position: relative;
+    top: 10%;
+    left: 3%;
+    border-radius: 5px;
+}
+.dashboardTodayApts > div > div{
+    padding: 1% 4%;
+}
+.dashboardTodayApts > div h3{
+    text-align: left;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+.dashboardTodayApts > div h4{
+    color: white;
+    background-color: rgb(242, 108, 44);
+    margin: 0;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.dashboardTodayApts > div p {
+    font-size: 16px;
+    line-height: 150%;
+}
+.providerDashParent h2{
+    padding: 20px 0;
+    font-weight: lighter;
+    color: white;
+    margin: 0;
+    background: #203248;
+}
+.medsTableLabels > ul > li, .medsList > div > ul > li {
+    float: left;
+    width: 20%;
+    padding: 15px 10px 15px 25px;
+}
+.medsTableLabels > ul{
+    border-bottom: 1px solid #aaa;
+}
+.medsTableLabels > ul > li{
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    color: #aaa;
+}
+.medsList i{
+    vertical-align: middle;
+    padding-right: 10px;
+    color: #E82C0C;
+}
+.noMeds{
+    font-size: 24px;
+    text-align: center;
+    padding: 20%;
+}
+.patientMeds > div > div{
+    float: left;
+    width: 20%;
+    padding: 2% 3%;
+}
+.patientMeds > div > div:first-of-type {
+    background-color: #eee;
+}
+.patientMeds > div > div:first-of-type h3, .patientMeds i {
+    color: rgb(242, 108, 44);
+}
+.patientMeds i{
+    padding-right: 3px;
+    margin-right: -17px;
+    position: relative;
+    left: -20px;
+}
+.patientMeds img{
+    display: block;
+    border-radius: 5px;
+    padding-bottom: 5px;
+}
+.patientMeds > div > div:nth-of-type(2){
+    width: 80%;
+}
+.patientMeds > div > div:nth-of-type(2) > ul > li{
+    padding: 10px 0;
+}
+.patientMeds > div > div:first-of-type > ul > li{
+    padding: 10px 0;
+}
+.medTitle{
+    text-transform: uppercase;
+}
+.prescriber a{
+    text-transform: uppercase;
+    color: #333;
+}
+.prescriber h4{
+    padding-top: 0;
+    text-align: left;
+    font-size: 12px;
+    margin: 12px 0 4px;
+    text-transform: uppercase;
+    color: #bbb;
+}
+/*----------- MEDIA QUERIES ---------*/
+@media screen and (min-width: 2230px) {
+    .introProviders {
+        background-position: center -450px;
+    }
+}
+
+@media screen and (min-width: 1670px) {
+    .welcomeHeader > div {
+        min-height: 750px;
+    }
+
+    .welcomeHeader > div:first-of-type {
+        background-position: center 255px;
+        background-size: 70%;
+    }
+    .introProviders {
+        background-position: center -360px;
+    }
+}
+
+@media screen and (max-width: 1095px) {
+
+}
+
+@media screen and (max-width: 960px) {
+    /*------- DISPLAY NONE --------*/
+    .welcomeMy, .welcomeIlera, main .mainDashWelcome {
+        display: none !important;
+    }
+    /*------- HOME --------*/
+    main >section .team li{
+        width: 50%;
+    }
+    .homeFors h3, .teamSec h3 {
+        font-size: 3.8vw;
+    }
+    .homeFors .wrapper, .teamSec .wrapper {
+        width: 95%;
+    }
+    .homeFors h4 {
+        font-size: 5.5vw;
+    }
+    .homeFors p {
+        padding: 0;
+        font-size: 17px;
+    }
+    main > section .material-icons {
+        font-size: 8vw;
+    }
+    .welcomeHeader > div {
+        float: none;
+        width: 100%;
+        min-height: 400px;
+    }
+    .welcomeHeader > div:nth-of-type(2) {
+        height: 285px;
+    }
+    .welcomeHeader > div:first-of-type {
+        background-position: center 138px;
+        background-size: 50%;
+    }
+    .welcomeMy2 {
+        text-align: center;
+        padding: 10px 0 0 0;
+        display: block;
+        color: white;
+    }
+    .welcomeHeader {
+        box-shadow: none; 
+    }
+    main .welcomeMessage > h1 {
+        font-size: 5.2vw;
+    }
+    main .welcomeMessage li {
+        font-size: 3.4vw;
+    }
+    /*---- PATIENT DASHBOARD ------*/
+    .bottomRow > div, .bottomRow > a, .dashboardMain > div {
+        width: 45%;
+        margin: 2% 2.5%;
+    }
+    .dashboardRows a {
+        padding: 20px;
+        min-height: 290px;
+    }
+    .dashboardMain > div {
+        float: left;
+        width: 45%;
+        padding: 20px 0%;
+    }
+    #mainDashWelcomeMobile{
+        display: block;
+        width: 90%;
+        float: none;
+    }
+    .patientDash .dashboardMain > div {
+        width: 47%;
+        margin-top: 0;
+    }
+    /*------- PATIENT INFO EDIT/PROFILE*/
+    .profilePage > div {
+        float: none;
+        width: 100%;
+        min-height: 400px;
+    }
+    .profilePage .profileSummary > div:first-of-type {
+        min-height: 400px !important;
+    }
+    .profileSummary {
+        padding: 30px 3%;
+        border-right: none;
+        position: relative;
+    }
+    .profilePage > div:last-of-type {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .profileSummary > div {
+        float: left;
+        width: 50%;
+    }
+    /*-------- MESSAGES -------*/
+    .showContacts, .hideContacts{
+        position: absolute;
+        z-index: 20;
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .hideContacts{
+        display: none;
+    }
+    .chat > div {
+        float: none;
+        width: 100%;
+    }
+    .chat > div:first-of-type {
+        width: 100%;
+        float: none;
+        background: white;
+    }
+    .showContacts{
+        display: block;
+    }
+    .contactsTab{
+        display: block;
+        position: absolute;
+        z-index: 25;
+        left: 0;
+        top: 66px;
+        background: #ccc;
+        padding: 12px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .messagesIncoming > div, .messagesUser > div {
+        width: 75%;
+    }
+    /*------- MY PHYSICIANS ----------*/
+    .allPhysicians .searchForm input, select {
+        margin: 15px auto;
+        display: block;
+        width: 90%;
+    }
+    .allPhysicians .searchForm .smallForm, .searchForm button {
+        width: 90%;
+    }
+    .allPhysicianList li, .allPatientList li {
+        width: 23%;
+    }
+    /*-------- MY RECORDS ----------*/
+    .medRecords th {
+        font-size: 15px !important;
+    }
+    /*-------- PROVIDER DASHBOARD -------*/
+    .providerDashRight > a, .providerDashRight > div {
+        height: 180px;
+    }
+    .providerDashRight > a h3 {
+        padding: 2% 0 0;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .mobileBurger{
+        display: block;
+    }
+    .noBurger{
+        display: none;
+    }
+    .welcomeHeader > div:nth-of-type(2) {
+        min-height: 300px;
+    }
+    main .welcomeMessage {
+        margin: 5% 0% 4% 5%;
+    }
+    .welcomeHeader > div:first-of-type {
+        background-size: 66%;
+    }
+    .welcomeMy2 {
+        padding: 30px 0 0 0;
+        font-size: 11vw;
+    }
+    .mobileBurger {
+        display: block;
+        position: relative;
+        float: right;
+        padding: 15px;
+    }
+    .showBurger {
+        float: none;
+        position: absolute;
+        top: 45px;
+        background: #eee;
+        width: 100%;
+    }
+    .showBurger > li {
+        float: none;
+        padding: 10px;
+        border-bottom: 1px solid white;
+    }
+    .showBurger > li:hover{
+        background-color: #ccc;
+    }
+    .homeModal > div > div{
+        width: 100% !important;
+    }
+    .homeModal h2{
+        font-size: 30px;
+        margin: 20px 0 0px;
+    }
+    .stepper{
+        padding: 0 15px;
+    }
+    .stepper > div > div h6{
+        display: none;
+    }
+    .formIntro > div > div:first-of-type{
+        margin: 0 4% !important;
+    }
+    .patientAppMain {
+        padding: 30px 0 50px;
+    }
+    /*----- MY PHYSICIANS -------*/
+    .searchProfile img {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+    .physicianProfileTitle {
+        float: none;
+        margin-left: 0;
+        line-height: 115px;
+        font-size: 7vw;
+        font-weight: 300;
+        text-align: center;
+    }
+    .addPhysicianButton, .removePhysicianButton, .appointmentRequestButton {
+        float: none;
+        width: 100%;
+        position: relative;
+        right: 0;
+    }
+    /*---------- RECORDS -----------*/
+    .uploadRecord button {
+        padding: 1em 2em;
+        color: #fff;
+        background: #099;
+        border: none;
+        border-radius: .2em;
+        width: 90%;
+        margin: 10px auto;
+        display: block;
+    }
+    /*-------- PATIENT MEDS -------*/
+    .patientMeds > div > div {
+        float: left;
+        width: 40%;
+        padding: 10% 3%;
+    }
+    .patientMeds > div > div:nth-of-type(2) {
+        width: 60%;
+        padding: 10% 1% 0 9%;
+    }
+    /*----- PROVIDER VIEW OF SINGLE PATIENT ------*/
+    .physicianAppMain .profileDash .provViewPatDash {
+        width: 100%;
+        float: none;
+        margin-bottom: 35px;
+    }
+}
+
+@media screen and (max-width: 535px) {
+    .welcomeHeader > div {
+        min-height: 520px;
+    }
+    .patientAppMain .profileDash{
+        display: none;
+    }
+    .profileForms > div:nth-of-type(2) > div > button div {
+        font-size: 11px;
+    }
+    .profileSummary > div {
+        float: none;
+        width: 100%;
+    }
+    .profilePage .profileSummary > div:first-of-type {
+        min-height: 280px !important;
+    }
+    /*------ MY PHYSICIANS -------*/
+    .allPhysicianList li, .allPatientList li {
+        width: 40%;
+    }
+    /*----- RECORDS ------------*/
+    .uploadRecordPage .formButton {
+        margin: 2% auto;
+        width: 90%;
+    }
+    /*--------- PROVIDER DASHBOARD ----------*/
+    .providerDashParent > div, .providerDashParent > div:first-of-type {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    /*-------- DISPLAY NONE --------*/
+    body main .mainDashWelcome{
+        display: none;
+    }
+    /*------- HOME --------*/
+    main >section .team li{
+        width: 100%;
+    }
+    .welcomeHeader > div {
+        min-height: 285px;
+    }
+    .homeFors h3, .teamSec h3 {
+        font-size: 5.9vw;
+        padding: 0;
+    }
+    main > section:not(.welcomeHeader) li {
+        width: 100%;
+        margin: 1% 0;
+        padding: 20px 0;
+    }
+    .homeFors h4 {
+        font-size: 6.7vw;
+    }
+    .introPhotos {
+        background-position: center -20px;
+        height: 140px;
+    }
+    .homeFors p {
+        padding: 0 18%;
+    }
+    main > section .material-icons {
+        font-size: 10vw;
+    }
+    main > section .introTeam{
+        height: 90px;
+    }
+    .welcomeHeader > div:first-of-type {
+        background-position: center 76px;
+        background-size: 70%;
+    }
+    .welcomeMy2 {
+        font-size: 10vw;
+        padding: 16px 0 0 0;
+    }
+    main .welcomeMessage > h1 {
+        font-size: 5.2vw;
+    }
+    main .welcomeMessage li {
+        font-size: 4.5vw;
+    }
+    main .welcomeMessage {
+        margin: 5% 0% 2% 5%;
+    }
+    /*---- DASHBOARD ------*/
+    .bottomRow > div, .bottomRow > a, .dashboardMain > div {
+        float: none;
+        width: 90%;
+        display: block;
+        margin: 10% auto;
+    }
+    .dashboardRows:first-of-type h3 {
+        text-align: center; 
+    }
+    .dashboardRows:first-of-type, .profileForms > div:first-of-type {
+        padding: 1px 0;
+    }
+    .patientDash .dashboardMain > div {
+        width: 100%;
+        float: none;
+    }
+    
+    
+}
+@media screen and (max-width: 460px) {
+    .allPhysicianList li, .allPatientList li {
+        width: 100%;
+        margin: 4% 0;
+    }
+}
